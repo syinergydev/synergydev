@@ -46,7 +46,7 @@
       }
       var f = new FormData(form);
       var lines = [
-        'Halo Risky, saya tertarik dengan layanan website SynergyDev.',
+        'Halo SynergyDev, saya tertarik dengan layanan website.',
         '',
         'Nama: ' + f.get('name'),
         'Bisnis/Perusahaan: ' + (f.get('company') || '-'),
