@@ -194,3 +194,9 @@ section{padding:76px 0}
 .swipe>*{flex:0 0 82%;max-width:82%;scroll-snap-align:start}
 .swipe .card{height:auto}
 }
+
+.page-split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.page-img img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:24px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.quick{text-decoration:none;color:inherit}
+.quick h3{color:var(--ink)}
+@media (max-width:760px){.page-split{grid-template-columns:1fr;gap:32px}}
