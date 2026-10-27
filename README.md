@@ -1,56 +1,50 @@
-# SynergyDev – Website Multi-Halaman
+# SynergyDev Website
 
-Website statis untuk jasa pembuatan website SynergyDev. Dibuat dengan HTML, Tailwind CSS (via CDN), dan JavaScript vanilla. Tanpa backend dan tanpa framework.
+Static website for SynergyDev (Web Development & Digital Solution). No build step required.
 
-## Cara deploy
+## Structure
 
-**Netlify (drag & drop):** buka app.netlify.com/drop lalu seret seluruh folder `synergydev-website-v3` ke halaman tersebut. Netlify akan membaca `_headers` dan `netlify.toml` secara otomatis.
+- `index.html` – Home
+- `about/`, `services/`, `projects/`, `process/`, `contact/` – main pages (clean URLs via folder index files)
+- `projects/<slug>/` – project detail pages (ktrog, ktrog-admin, chasly, villa-jambu-klutuk, fun-english, rustic-market)
+- `assets/styles.css` – all styles
+- `assets/main.js` – navigation, scroll effects, contact form (opens WhatsApp)
+- `assets/projects/<slug>.jpg` – optional project screenshots (see below)
+- `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`
 
-**Vercel:** impor folder sebagai proyek statis (Framework Preset: Other). Header keamanan di `_headers` perlu dipindahkan ke `vercel.json` jika ingin tetap diterapkan.
+## Deploy to GitHub Pages
 
-Setelah publikasi, cek hasil di:
-- https://search.google.com/test/rich-results
-- https://pagespeed.web.dev
+1. Create a new repository on GitHub (for example `synergydev-website`).
+2. Upload **all files and folders** in this folder, keeping the structure. The `.nojekyll` file must be included.
+3. Go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then **Save**.
+4. Wait a minute, then open the URL GitHub shows.
 
-## Daftar halaman
+### Custom domain (optional)
 
-| File | Isi |
-|---|---|
-| `index.html` | Beranda: hero, keunggulan, layanan, statistik, FAQ, form kontak |
-| `layanan-bisnis.html` | Website Bisnis & Company Profile |
-| `layanan-toko.html` | Website Toko Online & Modul |
-| `layanan-berita.html` | Portal Berita Berlisensi & Premium |
-| `produk.html` | Katalog 13 produk dengan filter dan keranjang |
-| `tentang-kami.html` | Mengapa kami, fitur pro, alur kerja, portofolio |
-| `promo.html` | Penawaran dan Quiz Pilih Paket |
-| `kebijakan-privasi.html` | Kebijakan privasi |
-| `404.html` | Halaman tidak ditemukan |
+1. In **Settings → Pages → Custom domain**, enter `syinergydev.work.gd` and save.
+2. Add a `CNAME` file in the root with the single line `syinergydev.work.gd`.
+3. Point your DNS to GitHub Pages as described in GitHub's documentation.
 
-## Cara mengubah konten
+If you use a different domain, search for `https://syinergydev.work.gd` across all files and replace it (canonical links, Open Graph tags, sitemap, robots.txt, and footer links).
 
-- **Produk dan harga:** semua produk disimpan di `assets/products.js` (dipakai keranjang). Teks kartu dan harga di setiap halaman dibuat dari satu sumber. Setelah mengubah harga, ubah juga teks harganya di halaman terkait.
-- **Nomor WhatsApp:** cari `6285737681560` di seluruh file HTML dan ganti dengan nomor baru (format 62 tanpa 0 di depan).
-- **Email:** cari `syinergydev@gmail.com`.
-- **Domain:** saat ini memakai subdomain Netlify gratis `synergydev.netlify.app`. Jika pindah ke domain berbayar, cari `synergydev.netlify.app` di seluruh file (termasuk `sitemap.xml` dan `robots.txt`) lalu ganti.
-- **Foto:** simpan gambar baru di `assets/` atau `assets/produk/` dalam format WebP, dan usahakan di bawah 300 KB.
+## Adding project screenshots
 
-## Hal yang perlu dikonfirmasi pemilik sebelum publikasi
+Save screenshots as JPG files in `assets/projects/` using these names:
 
-1. **Domain:** pastikan subdomain `synergydev.netlify.app` tersedia di Netlify (Site settings > Domain management), atau pilih nama lain lalu perbarui semua file.
-2. **Ejaan nama usaha:** logo dan konten memakai "SynergyDev", sedangkan prompt awal menulis "SyinergyDev". Pastikan mana yang benar, termasuk untuk email.
-3. **Klaim di banner:** "Domain milik sendiri", "Free hosting", dan "Revisi gratis 2x" diambil dari banner promosi. Pastikan layanan tersebut memang berlaku.
-4. **Foto portofolio dan banner:** pastikan Anda berhak menggunakannya di website.
-5. **Kebijakan privasi:** teks di `kebijakan-privasi.html` adalah draf umum. Periksa sesuai kondisi usaha Anda.
-6. **Jam layanan:** tidak ada jam buka yang dicantumkan. Tambahkan jika ada.
+- `ktrog.jpg`
+- `ktrog-admin.jpg`
+- `chasly.jpg`
+- `villa-jambu-klutuk.jpg`
+- `fun-english.jpg`
+- `rustic-market.jpg`
 
-## Catatan teknis
+If a file is missing, the page shows the project name as a placeholder instead.
 
-- Tailwind dimuat dari CDN sesuai spesifikasi. Untuk produksi dengan skor performa maksimal, pertimbangkan build Tailwind CLI agar CSS hanya berisi kelas yang dipakai.
-- Jika konsol browser menampilkan error Content Security Policy dari Tailwind CDN, tambahkan `'unsafe-eval'` pada `script-src` di `_headers`.
-- Keranjang disimpan di localStorage browser pengunjung. Tidak ada pembayaran online; pesanan diselesaikan lewat WhatsApp.
-- Form kontak dan quiz tidak mengirim data ke server. Isinya dikirim ke WhatsApp melalui tautan `wa.me`.
+## Contact form
 
-## Kontak
+The contact form has no backend. Submitting it opens WhatsApp with the inquiry details filled in, so no server is needed.
 
-WhatsApp: +62 857-3768-1560
-Email: syinergydev@gmail.com
+## Notes
+
+- Keep project status accurate. Chasly is marked **In Development** and Rustic Market is marked **Website Concept / Demo**.
+- Social media links are intentionally omitted until official accounts exist.

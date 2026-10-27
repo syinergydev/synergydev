@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://synergydev.netlify.app/</loc><lastmod>2026-10-14</lastmod><priority>1.0</priority></url>
-  <url><loc>https://synergydev.netlify.app/layanan-bisnis.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/layanan-toko.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/layanan-berita.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/produk.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/tentang-kami.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/promo.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
-  <url><loc>https://synergydev.netlify.app/kebijakan-privasi.html</loc><lastmod>2026-10-14</lastmod><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://syinergydev.work.gd/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/services/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/process/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/ktrog/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/ktrog-admin/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/chasly/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/villa-jambu-klutuk/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/fun-english/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/projects/rustic-market/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
