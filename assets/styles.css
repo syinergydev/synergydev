@@ -309,3 +309,259 @@ section{padding:72px 0}
 .hero-full .container{width:100%}
 }
 @keyframes cardIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+
+/* ---- Beranda HP: bagian di bawah foto dibuat lebih rapi ---- */
+.hero-mdots{display:none}
+.hslide .cap{display:none}
+@media (max-width:760px){
+/* Foto: keterangan dan indikator geser */
+.hslide{box-shadow:0 20px 40px rgba(15,18,24,.18)}
+.hslide::after{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(0deg,rgba(10,14,22,.78),rgba(10,14,22,0));pointer-events:none}
+.hslide .cap{display:block;position:absolute;left:16px;right:16px;bottom:16px;z-index:2;color:#fff;font-family:Manrope,Inter,sans-serif;font-weight:700;font-size:.98rem;text-align:left;line-height:1.3}
+.hslide .cap::before{content:"";display:block;width:26px;height:3px;border-radius:3px;background:#fff;margin-bottom:8px}
+.hero-mdots{display:flex;justify-content:center;gap:7px;margin-top:6px}
+.hero-mdots span{width:7px;height:7px;border-radius:999px;background:#cfd6e4;transition:width .35s,background .35s}
+.hero-mdots span.on{width:22px;background:var(--ink)}
+/* Scroll-driven: kartu membesar saat masuk layar (browser yang mendukung) */
+@supports (animation-timeline: view()){
+.hslide{animation:cardScale linear both;animation-timeline:view(inline);animation-range:entry 0% entry 55%}
+}
+/* Highlight: grid 2 kolom, tidak perlu digeser */
+.highlights{padding:8px 0 0}
+.highlights .swipe{display:grid!important;grid-template-columns:1fr 1fr;gap:12px;margin:0;padding:0;overflow:visible}
+.highlights .swipe>*{flex:none;max-width:none}
+.highlight{padding:18px 16px;border-radius:18px}
+.highlight h3{font-size:.95rem;margin-bottom:6px}
+.highlight p{font-size:.82rem;line-height:1.5}
+/* Menu Portofolio / Layanan / Harga: daftar rapi */
+.explore.swipe{display:flex!important;flex-direction:column;gap:12px;margin:0;padding:0;overflow:visible}
+.explore.swipe>*{flex:none;max-width:none}
+.explore .quick{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2px 14px;padding:20px 22px;border-radius:20px}
+.explore .quick h3{grid-column:1;font-size:1.05rem;margin:0}
+.explore .quick p{grid-column:1;font-size:.9rem;margin:0}
+.explore .quick .more{grid-column:2;grid-row:1 / span 2;margin:0;padding:0;width:40px;height:40px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:0;letter-spacing:0}
+.explore .quick .more::after{content:"→";font-size:1.1rem}
+/* Jam operasional */
+.hours-strip{flex-direction:column;align-items:flex-start;gap:16px;padding:22px 22px;border-radius:20px;background:var(--soft);border:none}
+.hours-strip .btn{width:100%}
+/* Irama spasi lebih rapat di beranda HP */
+#top + .highlights + .section-soft{padding:56px 0}
+}
+
+/* ---- Brand & banner menu (semua layar) ---- */
+.brand-word{font-family:Sora,Manrope,Inter,sans-serif;font-weight:800;letter-spacing:-.02em;color:inherit}
+.page-banner{display:none}
+
+/* ---- Penyempurnaan HP (ditulis terakhir agar menang) ---- */
+@media (max-width:760px){
+/* Hero: foto penuh di latar, tiga foto berganti dengan animasi, teks putih di tengah */
+.hero-full{display:flex;flex-direction:column;justify-content:flex-end;min-height:100vh;min-height:100svh;height:auto;background:var(--ink);color:#fff;overflow:hidden;padding:0}
+.hero-slides{position:absolute;inset:0;z-index:0;display:block;padding:0;margin:0;gap:0;overflow:hidden;scroll-snap-type:none}
+.hslide{position:absolute;inset:0;flex:none;width:auto;max-width:none;aspect-ratio:auto;border-radius:0;box-shadow:none;opacity:0;transition:opacity 1.4s ease;animation:none;overflow:hidden;scroll-snap-align:none}
+.hslide.active{opacity:1}
+.hslide::after{display:none}
+.hslide img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
+.hslide.active img{animation:kenburnsA 9s ease-out forwards!important}
+.hslide:nth-child(even).active img{animation-name:kenburnsB!important}
+.hslide:nth-child(1) img{object-position:72% center}
+.hslide:nth-child(2) img{object-position:60% center}
+.hslide:nth-child(3) img{object-position:62% center}
+.hero-overlay{display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,14,22,.28) 0%,rgba(10,14,22,.55) 42%,rgba(10,14,22,.92) 100%)}
+.hero-content{position:relative;z-index:2;order:0;padding:120px 22px 120px;text-align:center;color:#fff}
+.hero-content .eyebrow{display:block;color:#9fc0ff;font-size:.72rem;letter-spacing:.14em;margin-bottom:12px}
+.hero-content h1{color:#fff;font-size:clamp(1.85rem,7.6vw,2.3rem);line-height:1.16;margin:0 auto;max-width:420px}
+.hero-content .lead-light{color:#dfe4ee;font-size:.97rem;margin:16px auto 0;max-width:420px}
+.hero-content .hero-actions{margin:26px auto 0;max-width:340px;flex-direction:column;align-items:stretch;gap:12px}
+.hero-content .hero-actions .btn{width:100%}
+.hero-content .btn-light{background:#fff;color:var(--ink);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.hero-content .btn-outline-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
+.hero-hint{display:block;color:#9fc0ff;margin:22px 0 0;font-size:.82rem;font-weight:600}
+.hero-dots{display:flex;position:absolute;left:50%;transform:translateX(-50%);right:auto;bottom:22px;z-index:3;gap:8px}
+.hero-dots span{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.45)}
+.hero-dots span.on{background:#fff;width:24px}
+.hero-mdots{display:none}
+.hero-progress{display:block;position:absolute;left:0;bottom:0;height:3px;width:100%;background:rgba(255,255,255,.15);z-index:3}
+.hero-progress span{background:#fff}
+.hero-progress.run span{animation:progress 6s linear forwards}
+
+/* Highlight & menu: tumpukan rapi, tidak digeser */
+.highlights .swipe{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important;overflow:visible!important;margin:0!important;padding:0!important}
+.highlights .swipe>*{flex:none!important;width:auto!important;max-width:none!important}
+.explore.swipe{display:flex!important;flex-direction:column!important;overflow:visible!important;margin:0!important;padding:0!important;gap:12px!important}
+.explore.swipe>*{flex:none!important;width:100%!important;max-width:none!important}
+
+/* Banner menu kecil */
+.page-banner{display:block;width:100%;aspect-ratio:21/9;border-radius:16px;overflow:hidden;margin:0 0 22px;box-shadow:0 10px 24px rgba(15,18,24,.12)}
+.page-banner img{width:100%;height:100%;object-fit:cover;object-position:center}
+.page-hero{padding:44px 0 30px}
+
+/* Foto portofolio lebih kecil */
+.project .preview{aspect-ratio:4/3}
+.swipe>*{flex:0 0 78%!important;max-width:78%!important}
+}
+
+
+/* ===== Premium page heroes & responsive polish ===== */
+.page-hero-image{
+  position:relative;
+  min-height:390px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  isolation:isolate;
+  border-bottom:0;
+  background:var(--ink);
+}
+.page-hero-image .page-hero-media,
+.page-hero-image .page-hero-media img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+.page-hero-image .page-hero-media img{
+  object-fit:cover;
+  object-position:center;
+  transform:scale(1.02);
+}
+.page-hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(10,14,22,.86) 0%,rgba(10,14,22,.62) 48%,rgba(10,14,22,.34) 100%),
+    linear-gradient(0deg,rgba(10,14,22,.62),rgba(10,14,22,.08) 65%);
+}
+.page-hero-content{
+  position:relative;
+  z-index:2;
+  padding:92px 0;
+}
+.page-hero-content h1{
+  color:#fff;
+  max-width:820px;
+  font-size:clamp(2.5rem,5vw,4.3rem);
+  margin-bottom:16px;
+}
+.page-hero-content .lead-light{
+  max-width:720px;
+  color:#e2e6ee;
+  font-size:clamp(1rem,1.5vw,1.12rem);
+}
+.page-hero-content .eyebrow-light{
+  color:#b5ccff;
+  margin-bottom:14px;
+}
+.page-hero-image + section{
+  padding-top:88px;
+}
+.page-hero-image + section .section-head{
+  margin-bottom:46px;
+}
+
+/* Better cards on desktop */
+.highlight,
+.card,
+.contact-card,
+.form-card{
+  box-shadow:0 8px 28px rgba(15,18,24,.035);
+}
+.highlight{
+  min-height:150px;
+}
+.project{
+  min-width:0;
+}
+.project-body h3{
+  margin-bottom:2px;
+}
+.plans .plan{
+  min-width:0;
+}
+
+/* About page: full-width content after hero */
+#main > section .split{
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+}
+#main > section .split > .reveal:only-child{
+  max-width:900px;
+  margin:0 auto;
+}
+
+/* Better navigation spacing */
+@media (min-width:961px){
+  .nav-links{gap:24px}
+  .nav-links a{font-size:.92rem}
+}
+
+/* Tablet */
+@media (max-width:960px){
+  .page-hero-image{min-height:350px}
+  .page-hero-content{padding:82px 0}
+  .page-hero-image + section{padding-top:72px}
+}
+
+/* Mobile: clean, full-width photo hero */
+@media (max-width:760px){
+  .container{width:min(100% - 32px,1200px)}
+  section{padding:64px 0}
+  .page-hero-image{
+    min-height:330px;
+  }
+  .page-hero-image .page-hero-media img{
+    object-position:center;
+  }
+  .page-hero-overlay{
+    background:
+      linear-gradient(180deg,rgba(10,14,22,.18) 0%,rgba(10,14,22,.48) 43%,rgba(10,14,22,.9) 100%);
+  }
+  .page-hero-content{
+    width:100%;
+    padding:105px 0 54px;
+    text-align:center;
+  }
+  .page-hero-content .eyebrow-light{
+    font-size:.68rem;
+    margin-bottom:10px;
+  }
+  .page-hero-content h1{
+    font-size:clamp(2.15rem,10vw,2.75rem);
+    line-height:1.08;
+    margin-bottom:12px;
+  }
+  .page-hero-content .lead-light{
+    font-size:.94rem;
+    line-height:1.6;
+    margin:0 auto;
+    max-width:520px;
+  }
+  .page-hero-image + section{padding-top:58px}
+  .page-hero-image + section .section-head{margin-bottom:34px}
+  .highlights .highlight{
+    min-height:0;
+    padding:18px 16px;
+  }
+  .highlights .highlight h3{font-size:.92rem}
+  .highlights .highlight p{font-size:.8rem}
+  .project-body{padding:20px 20px 22px}
+  .project-body p{font-size:.9rem}
+  .preview{aspect-ratio:16/11}
+  .plans .plan-price{font-size:1.45rem}
+  .contact-card,.form-card{padding:22px}
+  .split{gap:28px}
+  .stats{grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat{padding:18px 10px}
+  .stat-num{font-size:1.3rem}
+  .stat-label{font-size:.75rem;line-height:1.35}
+}
+
+/* Very small phones */
+@media (max-width:380px){
+  .page-hero-image{min-height:310px}
+  .page-hero-content{padding-top:96px}
+  .page-hero-content h1{font-size:2rem}
+  .stats{grid-template-columns:1fr}
+}

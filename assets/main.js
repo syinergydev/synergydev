@@ -86,6 +86,17 @@
         start();
       }
     }, { passive: true });
+    var mdots = hero.querySelectorAll('.hero-mdots span');
+    var track = hero.querySelector('.hero-slides');
+    if (track && mdots.length) {
+      track.addEventListener('scroll', function () {
+        var first = track.firstElementChild;
+        if (!first) return;
+        var step = first.offsetWidth + 14;
+        var idx = Math.min(mdots.length - 1, Math.max(0, Math.round(track.scrollLeft / step)));
+        mdots.forEach(function (d, i) { d.classList.toggle('on', i === idx); });
+      }, { passive: true });
+    }
     runProgress();
     start();
   }
