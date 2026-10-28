@@ -43,11 +43,12 @@
     var DURATION = 6000;
     var cur = 0, timer = null;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var desktop = window.matchMedia && window.matchMedia('(min-width: 761px)').matches;
     function runProgress() {
-      if (!bar || reduce) return;
+      if (!bar) return;
       bar.classList.remove('run');
       void bar.offsetWidth;
-      bar.classList.add('run');
+      if (desktop && !reduce) bar.classList.add('run');
     }
     function go(i) {
       hslides[cur].classList.remove('active');
@@ -58,16 +59,33 @@
       runProgress();
     }
     function start() {
-      if (reduce || hslides.length < 2) return;
       clearInterval(timer);
-      timer = setInterval(function () { go(cur + 1); }, DURATION);
+      if (desktop && !reduce && hslides.length > 1) {
+        timer = setInterval(function () { go(cur + 1); }, DURATION);
+      }
     }
     hdots.forEach(function (d, i) {
       d.addEventListener('click', function () { go(i); start(); });
       d.addEventListener('keydown', function (e) { if (e.key === 'Enter') { go(i); start(); } });
     });
-    hero.addEventListener('mouseenter', function () { clearInterval(timer); });
-    hero.addEventListener('mouseleave', start);
+    if (desktop) {
+      hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+      hero.addEventListener('mouseleave', start);
+    }
+    var sx = null, sy = null;
+    hero.addEventListener('touchstart', function (e) {
+      sx = e.touches[0].clientX; sy = e.touches[0].clientY;
+    }, { passive: true });
+    hero.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      var dy = e.changedTouches[0].clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+        go(cur + (dx < 0 ? 1 : -1));
+        start();
+      }
+    }, { passive: true });
     runProgress();
     start();
   }
