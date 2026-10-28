@@ -1,8 +1,6 @@
 (function () {
   var header = document.querySelector('.site-header');
-  function onScroll() {
-    if (header) header.classList.toggle('scrolled', window.scrollY > 16);
-  }
+  function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 16); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -21,14 +19,64 @@
     });
   }
 
+  var filters = document.querySelectorAll('.filter');
+  var cards = document.querySelectorAll('#projectGrid [data-cat]');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      filters.forEach(function (b) {
+        var on = b === btn;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      cards.forEach(function (c) {
+        c.style.display = (f === 'All' || c.getAttribute('data-cat') === f) ? '' : 'none';
+      });
+    });
+  });
+
+  var hero = document.querySelector('[data-hero]');
+  if (hero) {
+    var hslides = hero.querySelectorAll('.hslide');
+    var hdots = hero.querySelectorAll('.hero-dots span');
+    var bar = hero.querySelector('.hero-progress');
+    var DURATION = 6000;
+    var cur = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function runProgress() {
+      if (!bar || reduce) return;
+      bar.classList.remove('run');
+      void bar.offsetWidth;
+      bar.classList.add('run');
+    }
+    function go(i) {
+      hslides[cur].classList.remove('active');
+      hdots[cur] && hdots[cur].classList.remove('on');
+      cur = (i + hslides.length) % hslides.length;
+      hslides[cur].classList.add('active');
+      hdots[cur] && hdots[cur].classList.add('on');
+      runProgress();
+    }
+    function start() {
+      if (reduce || hslides.length < 2) return;
+      clearInterval(timer);
+      timer = setInterval(function () { go(cur + 1); }, DURATION);
+    }
+    hdots.forEach(function (d, i) {
+      d.addEventListener('click', function () { go(i); start(); });
+      d.addEventListener('keydown', function (e) { if (e.key === 'Enter') { go(i); start(); } });
+    });
+    hero.addEventListener('mouseenter', function () { clearInterval(timer); });
+    hero.addEventListener('mouseleave', start);
+    runProgress();
+    start();
+  }
+
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
     }, { threshold: 0.12 });
     items.forEach(function (el) { io.observe(el); });
@@ -36,27 +84,35 @@
     items.forEach(function (el) { el.classList.add('in'); });
   }
 
-  var form = document.getElementById('inquiry');
+  var form = document.getElementById('contactForm');
+  var errorEl = document.getElementById('formError');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      var name = form.elements.name, contact = form.elements.contact;
+      var ok = true;
+      [name, contact].forEach(function (el) {
+        var v = el.value.trim();
+        var valid = v.length > 0 && (el === name || v.length >= 6);
+        el.classList.toggle('invalid', !valid);
+        if (!valid) ok = false;
+      });
+      if (!ok) {
+        errorEl.textContent = 'Mohon lengkapi nama dan email atau nomor WhatsApp.';
+        (name.classList.contains('invalid') ? name : contact).focus();
         return;
       }
-      var f = new FormData(form);
+      errorEl.textContent = '';
       var lines = [
-        'Halo SynergyDev, saya tertarik dengan layanan website.',
+        'Halo SynergyDev, saya ingin konsultasi mengenai website.',
         '',
-        'Nama: ' + f.get('name'),
-        'Bisnis/Perusahaan: ' + (f.get('company') || '-'),
-        'WhatsApp: ' + f.get('whatsapp'),
-        'Email: ' + (f.get('email') || '-'),
-        'Jenis Project: ' + (f.get('type') || '-'),
-        'Range Budget: ' + f.get('budget'),
+        'Nama: ' + name.value.trim(),
+        'Nama Bisnis: ' + (form.elements.business.value.trim() || '-'),
+        'Email / WhatsApp: ' + contact.value.trim(),
+        'Jenis Website: ' + (form.elements.type.value || '-'),
         '',
         'Pesan:',
-        f.get('message') || '-'
+        form.elements.message.value.trim() || '-'
       ];
       window.open('https://wa.me/6285737681560?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });

@@ -1,50 +1,28 @@
 # SynergyDev Website
 
-Static website for SynergyDev (Web Development & Digital Solution). No build step required.
+Website satu halaman (one-page) untuk SynergyDev — Web Development & Digital Solution. Tidak memerlukan build.
 
-## Structure
+## Struktur
 
-- `index.html` – Home
-- `about/`, `services/`, `projects/`, `process/`, `contact/` – main pages (clean URLs via folder index files)
-- `projects/<slug>/` – project detail pages (ktrog, ktrog-admin, chasly, villa-jambu-klutuk, fun-english, rustic-market)
-- `assets/styles.css` – all styles
-- `assets/main.js` – navigation, scroll effects, contact form (opens WhatsApp)
-- `assets/projects/<slug>.jpg` – optional project screenshots (see below)
-- `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`
+- `index.html` — seluruh halaman: Hero, Highlights, Portfolio (dengan filter), Services, Benefits, How We Work, Pricing, About, FAQ, CTA, Contact (form), Lokasi (Google Maps), Footer.
+- `assets/styles.css` — seluruh gaya.
+- `assets/main.js` — menu mobile, filter portfolio, animasi scroll, validasi form, dan pengiriman ke WhatsApp.
+- `assets/projects/<nama>.jpg` — screenshot project (`ktrog`, `ktrog-admin`, `villa-jambu-klutuk`, `fun-english`, `chasly`, `rustic-market`, `king-barbershop`).
+- `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`.
 
-## Deploy to GitHub Pages
+## Mengganti foto
 
-1. Create a new repository on GitHub (for example `synergydev-website`).
-2. Upload **all files and folders** in this folder, keeping the structure. The `.nojekyll` file must be included.
-3. Go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then **Save**.
-4. Wait a minute, then open the URL GitHub shows.
+- Screenshot King Barbershop belum ada. Simpan sebagai `assets/projects/king-barbershop.jpg`. Jika belum ada, kartu menampilkan nama project sebagai placeholder.
+- Foto di bagian About (`assets/hero-bg.webp`) adalah ilustrasi, bukan foto kantor asli. Ganti dengan foto kantor Anda dengan nama file yang sama.
 
-### Custom domain (optional)
+## Deploy ke GitHub Pages
 
-1. In **Settings → Pages → Custom domain**, enter `syinergydev.work.gd` and save.
-2. Add a `CNAME` file in the root with the single line `syinergydev.work.gd`.
-3. Point your DNS to GitHub Pages as described in GitHub's documentation.
+1. Upload semua isi folder ini ke repository (termasuk `.nojekyll`).
+2. Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.
+3. Untuk custom domain `syinergydev.work.gd`, isi kolom Custom domain dan tambahkan file `CNAME` berisi satu baris `syinergydev.work.gd`.
 
-If you use a different domain, search for `https://syinergydev.work.gd` across all files and replace it (canonical links, Open Graph tags, sitemap, robots.txt, and footer links).
+## Catatan
 
-## Adding project screenshots
-
-Save screenshots as JPG files in `assets/projects/` using these names:
-
-- `ktrog.jpg`
-- `ktrog-admin.jpg`
-- `chasly.jpg`
-- `villa-jambu-klutuk.jpg`
-- `fun-english.jpg`
-- `rustic-market.jpg`
-
-If a file is missing, the page shows the project name as a placeholder instead.
-
-## Contact form
-
-The contact form has no backend. Submitting it opens WhatsApp with the inquiry details filled in, so no server is needed.
-
-## Notes
-
-- Keep project status accurate. Chasly is marked **In Development** and Rustic Market is marked **Website Concept / Demo**.
-- Social media links are intentionally omitted until official accounts exist.
+- Nomor WhatsApp, email, dan domain sudah terpasang. Jika berubah, cari dan ganti di `index.html`.
+- Form tidak memiliki backend. Saat dikirim, form membuka WhatsApp dengan detail yang sudah diisi.
+- Harga di bagian Pricing sesuai brief terbaru (mulai Rp1.000.000). Pastikan sesuai dengan penawaran yang dipakai di tempat lain.

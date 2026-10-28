@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://syinergydev.work.gd/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://syinergydev.work.gd/about/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/services/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/process/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/ktrog/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/ktrog-admin/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/chasly/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/villa-jambu-klutuk/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/fun-english/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://syinergydev.work.gd/projects/rustic-market/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/</loc><priority>1.0</priority></url>
+  <url><loc>https://syinergydev.work.gd/portofolio/</loc><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/layanan/</loc><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/harga/</loc><priority>0.8</priority></url>
+  <url><loc>https://syinergydev.work.gd/tentang-kami/</loc><priority>0.7</priority></url>
+  <url><loc>https://syinergydev.work.gd/faq/</loc><priority>0.6</priority></url>
+  <url><loc>https://syinergydev.work.gd/kontak/</loc><priority>0.8</priority></url>
 </urlset>
