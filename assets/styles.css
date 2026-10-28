@@ -279,3 +279,33 @@ section{padding:72px 0}
 .hero-dots{right:auto;left:50%;transform:translateX(-50%);bottom:26px}
 .hero-progress{display:none}
 }
+
+/* ---- Beranda HP: tampilan terang, foto potret bisa digeser ---- */
+.hero-hint{display:none}
+@media (max-width:760px){
+.hero-full{display:flex;flex-direction:column;min-height:0;height:auto;background:#fff;color:var(--ink);overflow:visible;padding:40px 0 10px}
+.hero-overlay{display:none}
+.hero-content{order:1;padding:0 22px;text-align:center;animation:none}
+.hero-content .eyebrow{display:block;color:var(--accent);font-size:.72rem;letter-spacing:.14em;margin-bottom:12px;animation:rise .8s ease both}
+.hero-content h1{color:var(--ink);font-size:clamp(1.8rem,7.4vw,2.25rem);line-height:1.16;margin:0 auto;max-width:420px;animation:rise .9s ease .1s both}
+.hero-content .lead-light{color:var(--muted);font-size:.97rem;margin:16px auto 0;max-width:420px;animation:rise .9s ease .2s both}
+.hero-content .hero-actions{margin:26px auto 0;max-width:340px;flex-direction:column;align-items:stretch;gap:12px;animation:rise .9s ease .3s both}
+.hero-content .hero-actions .btn{width:100%}
+.hero-content .btn-light{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(15,18,24,.18)}
+.hero-content .btn-light:hover{background:#262b36}
+.hero-content .btn-outline-light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero-content .btn-outline-light:hover{border-color:var(--ink)}
+.hero-hint{display:block;margin:22px 0 0;font-size:.82rem;font-weight:600;color:var(--accent);letter-spacing:.02em;animation:rise .9s ease .4s both}
+.hero-slides{order:2;position:relative;inset:auto;z-index:auto;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 22px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hero-slides::-webkit-scrollbar{display:none}
+.hslide{position:relative;inset:auto;opacity:1;flex:0 0 78%;max-width:78%;aspect-ratio:4/5;border-radius:24px;overflow:hidden;scroll-snap-align:center;box-shadow:0 18px 36px rgba(15,18,24,.16);transition:none;animation:cardIn .9s cubic-bezier(.2,.7,.2,1) both}
+.hslide:nth-child(2){animation-delay:.12s}
+.hslide:nth-child(3){animation-delay:.24s}
+.hslide img{transform:none!important;animation:none!important;width:100%;height:100%;object-fit:cover}
+.hslide:nth-child(1) img{object-position:72% center}
+.hslide:nth-child(2) img{object-position:60% center}
+.hslide:nth-child(3) img{object-position:62% center}
+.hero-dots,.hero-progress{display:none}
+.hero-full .container{width:100%}
+}
+@keyframes cardIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
