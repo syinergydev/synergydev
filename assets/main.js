@@ -60,7 +60,7 @@
       if (!bar) return;
       bar.classList.remove('run');
       void bar.offsetWidth;
-      if (desktop && !reduce) bar.classList.add('run');
+      if (!reduce) bar.classList.add('run');
     }
     function go(i) {
       hslides[cur].classList.remove('active');
@@ -72,7 +72,7 @@
     }
     function start() {
       clearInterval(timer);
-      if (desktop && !reduce && hslides.length > 1) {
+      if (!reduce && hslides.length > 1 && !document.hidden) {
         timer = setInterval(function () { go(cur + 1); }, DURATION);
       }
     }
@@ -84,6 +84,10 @@
       hero.addEventListener('mouseenter', function () { clearInterval(timer); });
       hero.addEventListener('mouseleave', start);
     }
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) clearInterval(timer);
+      else start();
+    });
     var sx = null, sy = null;
     hero.addEventListener('touchstart', function (e) {
       sx = e.touches[0].clientX; sy = e.touches[0].clientY;
