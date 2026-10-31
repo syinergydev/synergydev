@@ -1,28 +1,30 @@
 # SynergyDev Website
 
-Website satu halaman (one-page) untuk SynergyDev — Web Development & Digital Solution. Tidak memerlukan build.
+Website multi-halaman untuk SynergyDev — Web Development & Digital Solution. Website berupa HTML, CSS, dan JavaScript statis sehingga tidak memerlukan proses build atau database.
 
-## Struktur
+## Halaman
 
-- `index.html` — seluruh halaman: Hero, Highlights, Portfolio (dengan filter), Services, Benefits, How We Work, Pricing, About, FAQ, CTA, Contact (form), Lokasi (Google Maps), Footer.
-- `assets/styles.css` — seluruh gaya.
-- `assets/main.js` — menu mobile, filter portfolio, animasi scroll, validasi form, dan pengiriman ke WhatsApp.
-- `assets/projects/<nama>.jpg` — screenshot project (`ktrog`, `ktrog-admin`, `villa-jambu-klutuk`, `fun-english`, `chasly`, `rustic-market`, `king-barbershop`).
-- `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`.
+- `index.html` — Beranda.
+- `portofolio/index.html` — Daftar project dan filter kategori.
+- `layanan/index.html` — Layanan, manfaat, dan alur pengerjaan.
+- `harga/index.html` — Paket dan informasi biaya.
+- `tentang-kami/index.html` — Profil SynergyDev.
+- `faq/index.html` — Pertanyaan umum.
+- `kontak/index.html` — Kontak dan formulir konsultasi.
 
-## Mengganti foto
+## Aset utama
 
-- Screenshot King Barbershop belum ada. Simpan sebagai `assets/projects/king-barbershop.jpg`. Jika belum ada, kartu menampilkan nama project sebagai placeholder.
-- Foto di bagian About (`assets/hero-bg.webp`) adalah ilustrasi, bukan foto kantor asli. Ganti dengan foto kantor Anda dengan nama file yang sama.
+- `assets/styles.css` — Tampilan desktop, tablet, mobile, dan animasi.
+- `assets/main.js` — Navigasi mobile, filter portofolio, slideshow, animasi scroll, dan formulir WhatsApp.
+- `assets/projects/` — Gambar preview project.
 
-## Deploy ke GitHub Pages
+## Menjalankan dan deploy
 
-1. Upload semua isi folder ini ke repository (termasuk `.nojekyll`).
-2. Settings → Pages → Deploy from a branch → `main` → `/ (root)` → Save.
-3. Untuk custom domain `syinergydev.work.gd`, isi kolom Custom domain dan tambahkan file `CNAME` berisi satu baris `syinergydev.work.gd`.
+Tidak ada proses build. Buka `index.html` untuk melihat halaman beranda secara lokal. Untuk deploy, unggah seluruh isi folder ini ke root repository GitHub Pages atau layanan static hosting pilihan.
 
-## Catatan
+## Catatan penting
 
-- Nomor WhatsApp, email, dan domain sudah terpasang. Jika berubah, cari dan ganti di `index.html`.
-- Form tidak memiliki backend. Saat dikirim, form membuka WhatsApp dengan detail yang sudah diisi.
-- Harga di bagian Pricing sesuai brief terbaru (mulai Rp1.000.000). Pastikan sesuai dengan penawaran yang dipakai di tempat lain.
+- Formulir kontak tidak memakai backend. Saat dikirim, detail konsultasi disusun dan dibuka melalui WhatsApp.
+- Harga ditampilkan sebagai harga awal. Biaya domain, hosting berbayar, email bisnis, dan layanan pihak ketiga perlu dijelaskan pada penawaran dan hanya dianggap termasuk jika tertulis.
+- Dua putaran revisi berlaku untuk penyesuaian dalam ruang lingkup yang disepakati. Penambahan fitur atau halaman baru dapat menjadi pekerjaan tambahan.
+- Animasi mengikuti pengaturan `prefers-reduced-motion` agar tetap nyaman bagi pengunjung yang mengurangi gerakan.
