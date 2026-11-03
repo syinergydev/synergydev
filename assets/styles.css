@@ -1138,3 +1138,14 @@ button,a{-webkit-tap-highlight-color:transparent}
   #projectGrid .project,
   .filters .filter { transition: none !important; }
 }
+
+/* Update landing page: starting price and project detail preview */
+.hero-price{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;margin:18px 0 0;padding:9px 15px;border:1px solid rgba(255,255,255,.34);border-radius:999px;background:rgba(15,18,24,.34);color:rgba(255,255,255,.92);font-size:.92rem;backdrop-filter:blur(8px)}
+.hero-price strong{color:#fff;font-weight:800}
+.project-extra-preview{position:relative;margin:0 18px 0;padding:10px;background:var(--soft);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.project-extra-preview img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:7px}
+.project-extra-preview span{display:block;margin-top:7px;font-size:.76rem;font-weight:600;color:var(--muted)}
+@media(max-width:760px){
+ .hero-price{font-size:.82rem;line-height:1.45;border-radius:14px;max-width:100%}
+ .project-extra-preview{margin-left:14px;margin-right:14px}
+}
