@@ -1,30 +1,32 @@
-# SynergyDev Website
+# SynergyDev Website — Versi Terbaru
 
-Website multi-halaman untuk SynergyDev — Web Development & Digital Solution. Website berupa HTML, CSS, dan JavaScript statis sehingga tidak memerlukan proses build atau database.
+Website multi-halaman statis untuk SynergyDev, studio web independen yang aktif sejak 2025.
 
 ## Halaman
-
-- `index.html` — Beranda.
-- `portofolio/index.html` — Daftar project dan filter kategori.
-- `layanan/index.html` — Layanan, manfaat, dan alur pengerjaan.
-- `harga/index.html` — Paket dan informasi biaya.
-- `tentang-kami/index.html` — Profil SynergyDev.
+- `index.html` — Beranda dengan proyek pilihan, layanan, kolaborasi, dan alur kerja.
+- `portofolio/index.html` — Portofolio enam proyek dengan filter kategori.
+- `layanan/index.html` — Layanan dan proses pengerjaan.
+- `harga/index.html` — Paket harga dan skema pembayaran.
+- `tentang-kami/index.html` — Profil, prinsip kerja, dan dukungan.
 - `faq/index.html` — Pertanyaan umum.
-- `kontak/index.html` — Kontak dan formulir konsultasi.
+- `kontak/index.html` — Kontak dan formulir konsultasi WhatsApp.
 
-## Aset utama
+## Aset
+- `assets/synergydev-hero.webp`, `synergydev-about.webp`, `synergydev-workflow.webp` — Visual identitas studio.
+- `assets/projects/` — Presentasi proyek Fun English, Villa Jambu Klutuk, Rustic Market, K-TROG, K-TROG Admin, dan Chasly.
 
-- `assets/styles.css` — Tampilan desktop, tablet, mobile, dan animasi.
-- `assets/main.js` — Navigasi mobile, filter portofolio, slideshow, animasi scroll, dan formulir WhatsApp.
-- `assets/projects/` — Gambar preview project, termasuk sampul K-TROG, diagram arsitektur K-TROG, dan sampul Chasly.
+## Menjalankan
+Buka `index.html` secara lokal atau unggah seluruh isi folder ke root hosting statis/GitHub Pages. Tidak memerlukan build step.
 
-## Menjalankan dan deploy
+## Informasi bisnis yang ditampilkan
+- SynergyDev aktif sejak 2025 dan beroperasi sebagai studio web independen dengan tim kecil.
+- Skema pembayaran: DP 30%, pelunasan setelah pekerjaan selesai sesuai kesepakatan.
+- Bantuan perbaikan setelah publikasi mengikuti ruang lingkup dukungan yang disepakati.
+- Harga paket merupakan harga awal jasa; domain, hosting berbayar, dan layanan pihak ketiga hanya termasuk jika dinyatakan dalam penawaran.
 
-Tidak ada proses build. Buka `index.html` untuk melihat halaman beranda secara lokal. Untuk deploy, unggah seluruh isi folder ini ke root repository GitHub Pages atau layanan static hosting pilihan.
-
-## Catatan penting
-
-- Formulir kontak tidak memakai backend. Saat dikirim, detail konsultasi disusun dan dibuka melalui WhatsApp.
-- Harga paket Starter ditampilkan mulai Rp499.000 sebagai harga awal. Biaya domain, hosting berbayar, email bisnis, dan layanan pihak ketiga perlu dijelaskan pada penawaran dan hanya dianggap termasuk jika tertulis.
-- Dua putaran revisi berlaku untuk penyesuaian dalam ruang lingkup yang disepakati. Penambahan fitur atau halaman baru dapat menjadi pekerjaan tambahan.
-- Animasi mengikuti pengaturan `prefers-reduced-motion` agar tetap nyaman bagi pengunjung yang mengurangi gerakan.
+## Integritas portofolio dan testimoni
+- Fun English dan Villa Jambu Klutuk ditampilkan sebagai website yang telah dipublikasikan.
+- Rustic Market ditandai sebagai konsep/demo.
+- Chasly ditandai dalam pengembangan.
+- K-TROG dan K-TROG Admin ditampilkan sebagai bagian ekosistem aplikasi.
+- Tidak ada percakapan simulasi yang ditampilkan sebagai testimoni asli. Kutipan testimoni hanya boleh ditambahkan setelah diterima dan disetujui klien.
