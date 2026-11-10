@@ -1,0 +1,12 @@
+{
+  "name": "synergydev-website",
+  "version": "10.0.0",
+  "private": true,
+  "description": "Website SynergyDev — situs statis (HTML/CSS/JS) dengan motion GSAP. Tanpa build step.",
+  "scripts": {
+    "dev": "npx --yes serve@14 -l 3000 .",
+    "start": "npx --yes serve@14 -l 3000 .",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

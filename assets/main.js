@@ -1,6 +1,6 @@
 (function () {
-  var header = document.querySelector('.site-header');
-  function onScroll() { if (header) header.classList.toggle('scrolled', window.scrollY > 16); }
+  var header = document.querySelector('.top');
+  function onScroll() { if (header) header.classList.toggle('is-scrolled', window.scrollY > 12); }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
@@ -162,4 +162,74 @@
       window.open('https://wa.me/6285737681560?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });
   }
+})();
+
+
+/* v8: video portofolio hanya diputar saat terlihat di layar */
+(function () {
+  var vids = document.querySelectorAll('video.vid-el');
+  if (!vids.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) {
+        v.muted = true;
+        if (v.preload === 'none') v.preload = 'auto';
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+  vids.forEach(function (v) { io.observe(v); });
+})();
+
+
+/* v9: bilah progres scroll */
+(function () {
+  var bar = document.querySelector('.progress');
+  if (!bar) return;
+  var queued = false;
+  function update() {
+    queued = false;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? (h.scrollTop / max) : 0).toFixed(4) + ')';
+  }
+  window.addEventListener('scroll', function () {
+    if (!queued) { queued = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
+
+/* v9: bingkai video sedikit miring mengikuti kursor (hanya perangkat dengan mouse) */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || (window.matchMedia && window.matchMedia('(hover: none)').matches)) return;
+  document.querySelectorAll('.vid').forEach(function (el) {
+    el.addEventListener('pointermove', function (e) {
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty('--rx', (-y * 7).toFixed(2) + 'deg');
+      el.style.setProperty('--ry', (x * 9).toFixed(2) + 'deg');
+    });
+    el.addEventListener('pointerleave', function () {
+      el.style.setProperty('--rx', '0deg');
+      el.style.setProperty('--ry', '0deg');
+    });
+  });
+})();
+
+/* v10: tombol "Kembali ke atas" (menghormati kurangi gerak lewat CSS scroll-behavior) */
+(function () {
+  document.querySelectorAll('[data-to-top]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  });
 })();

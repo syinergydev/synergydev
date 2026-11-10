@@ -1,32 +1,47 @@
-# SynergyDev Website — Versi Terbaru
+# SynergyDev Website v10 (Premium + Motion GSAP)
 
-Website multi-halaman statis untuk SynergyDev, studio web independen yang aktif sejak 2025.
+Situs statis (HTML, CSS, JavaScript murni). **Tidak ada build step**, tidak perlu `npm install`.
+Animasi memakai GSAP 3.13.0 + ScrollTrigger yang sudah disertakan lokal di `assets/vendor/`.
 
-## Halaman
-- `index.html` — Beranda dengan proyek pilihan, layanan, kolaborasi, dan alur kerja.
-- `portofolio/index.html` — Portofolio enam proyek dengan filter kategori.
-- `layanan/index.html` — Layanan dan proses pengerjaan.
-- `harga/index.html` — Paket harga dan skema pembayaran.
-- `tentang-kami/index.html` — Profil, prinsip kerja, dan dukungan.
-- `faq/index.html` — Pertanyaan umum.
-- `kontak/index.html` — Kontak dan formulir konsultasi WhatsApp.
+## Struktur
+```
+index.html, 404.html
+layanan/ harga/ kontak/ portofolio/ faq/ tentang-kami/   (masing-masing index.html)
+assets/styles.css  main.js  motion.js  vendor/(gsap, ScrollTrigger)
+vercel.json  robots.txt  sitemap.xml  package.json  scripts/check.mjs
+```
 
-## Aset
-- `assets/synergydev-hero.webp`, `synergydev-about.webp`, `synergydev-workflow.webp` — Visual identitas studio.
-- `assets/projects/` — Presentasi proyek Fun English, Villa Jambu Klutuk, Rustic Market, K-TROG, K-TROG Admin, dan Chasly.
+## Menjalankan lokal (Windows PowerShell)
+Di folder project:
+```powershell
+# opsi 1: Node.js terpasang
+npx --yes serve@14 -l 3000 .
+# opsi 2: Python terpasang
+python -m http.server 3000
+```
+Buka http://localhost:3000. Jangan buka `index.html` langsung (double-click), karena path `/assets` dan transisi halaman butuh server.
 
-## Menjalankan
-Buka `index.html` secara lokal atau unggah seluruh isi folder ke root hosting statis/GitHub Pages. Tidak memerlukan build step.
+Cek tautan/aset rusak (butuh Node.js): `node scripts/check.mjs`
 
-## Informasi bisnis yang ditampilkan
-- SynergyDev aktif sejak 2025 dan beroperasi sebagai studio web independen dengan tim kecil.
-- Skema pembayaran: DP 30%, pelunasan setelah pekerjaan selesai sesuai kesepakatan.
-- Bantuan perbaikan setelah publikasi mengikuti ruang lingkup dukungan yang disepakati.
-- Harga paket merupakan harga awal jasa; domain, hosting berbayar, dan layanan pihak ketiga hanya termasuk jika dinyatakan dalam penawaran.
+## Upload ke GitHub
+```powershell
+git init
+git add .
+git commit -m "SynergyDev v10 premium"
+git branch -M main
+git remote add origin https://github.com/USERNAME/NAMA-REPO.git
+git push -u origin main
+```
+Untuk repo yang sudah ada: ganti isi repo dengan isi ZIP ini, lalu `git add . ; git commit -m "v10" ; git push`.
 
-## Integritas portofolio dan testimoni
-- Fun English dan Villa Jambu Klutuk ditampilkan sebagai website yang telah dipublikasikan.
-- Rustic Market ditandai sebagai konsep/demo.
-- Chasly ditandai dalam pengembangan.
-- K-TROG dan K-TROG Admin ditampilkan sebagai bagian ekosistem aplikasi.
-- Tidak ada percakapan simulasi yang ditampilkan sebagai testimoni asli. Kutipan testimoni hanya boleh ditambahkan setelah diterima dan disetujui klien.
+## Deploy ke Vercel
+1. vercel.com → **Add New → Project** → pilih repo GitHub tersebut.
+2. Framework Preset: **Other**. Build Command: kosongkan. Output Directory: kosongkan (root).
+3. **Deploy**. Setiap `git push` berikutnya otomatis redeploy.
+
+`vercel.json` sudah mengatur trailing slash, header keamanan dasar, dan cache aset.
+
+## Catatan
+- Gerak otomatis nonaktif bila perangkat memakai "kurangi gerak" (prefers-reduced-motion) atau GSAP gagal dimuat; konten tetap tampil utuh.
+- Setelah mengubah `styles.css`/`main.js`/`motion.js`, naikkan angka `?v=` pada tag `<link>`/`<script>` agar cache browser ter-refresh.
+- Font Plus Jakarta Sans dimuat dari Google Fonts (seperti versi sebelumnya).
