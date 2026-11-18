@@ -684,3 +684,10 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 /* v30 — kartu blog: lebar kolom yang benar */
 .pf-grid > .blog-card{grid-column:span 12;min-width:0}
 @media (min-width:961px){.pf-grid > .blog-card{grid-column:span 4}}
+
+/* v31 — ikon footer & tombol WhatsApp disembunyikan saat menu HP terbuka */
+.foot-social ul{display:flex;flex-direction:column;gap:12px;list-style:none;padding:0;margin:0}
+.foot-social li a{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}
+.foot-social li a:hover{color:var(--accent)}
+.foot-social svg{width:20px;height:20px;flex:none}
+body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !important}
