@@ -242,7 +242,17 @@
     "berkembang.": "grow.",
     "SynergyDev membantu bisnis membangun kehadiran digital melalui website profesional, sistem berbasis web, dan solusi digital yang disesuaikan dengan kebutuhan.": "SynergyDev helps businesses build a digital presence through professional websites, web-based systems, and digital solutions tailored to their needs.",
     "Konsultasikan Proyek": "Discuss your project",
-    "Lihat Portofolio": "View portfolio"
+    "Lihat Portofolio": "View portfolio",
+    "Berbasis di Lamongan, melayani kebutuhan digital secara online": "Based in Lamongan, serving digital needs online",
+    "Solusi website untuk berbagai kebutuhan bisnis": "Website solutions for many business needs",
+    "Pilih layanan yang sesuai dengan tujuan bisnis Anda. Jika kebutuhannya di luar daftar ini, tim kami bantu memeriksanya terlebih dahulu.": "Choose the service that fits your business goals. If your needs are outside this list, our team will help you review them first.",
+    "Apa yang website bisa bantu untuk bisnis Anda?": "What can a website help your business with?",
+    "Enam langkah dari diskusi hingga website online": "Six steps from discussion to a live website",
+    "Delapan konsep website yang kami buat sebagai gambaran solusi digital.": "Eight website concepts we built as examples of digital solutions.",
+    "Enam tahap": "Six stages",
+    "Proses yang jelas dari awal hingga online": "A clear process from start to live website",
+    "Tidak ada tahap yang disembunyikan. Biaya, ruang lingkup, dan jadwal disepakati sebelum pengerjaan dimulai.": "No hidden stages. Costs, scope, and timelines are agreed before work begins.",
+    "Hal yang kami jaga dalam setiap proyek": "What we uphold in every project"
   };
   var TITLES = {"Portofolio | SynergyDev":"Portfolio | SynergyDev", "Layanan | SynergyDev": "Services | SynergyDev", "Harga | SynergyDev": "Pricing | SynergyDev", "Tentang Kami | SynergyDev": "About Us | SynergyDev", "FAQ | SynergyDev": "FAQ | SynergyDev", "Kontak | SynergyDev": "Contact | SynergyDev", "Proses Kerja | SynergyDev": "How We Work | SynergyDev"};
   var ID_TO_EN = EN;
