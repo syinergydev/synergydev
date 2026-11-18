@@ -603,3 +603,9 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 .pf-explain{max-width:64ch;font-size:1.05rem;margin:0 0 clamp(40px,5vw,64px);color:var(--ink-2)}
 .pf-note{margin-top:clamp(40px,5vw,64px);font-size:.92rem;color:var(--mute);max-width:70ch}
 @media (max-width:960px){.pf-w7,.pf-w6,.pf-w5,.pf-w4{grid-column:span 12}.pf-w5 .pf-media,.pf-w4 .pf-media{aspect-ratio:16/10}}
+
+/* v17 — switcher berbentuk tautan */
+.lang a{color:var(--mute);text-decoration:none;padding:6px 4px;font:inherit}
+.lang a[aria-current="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.lang a:hover{color:var(--accent)}
+.lang a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}

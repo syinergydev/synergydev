@@ -236,16 +236,22 @@
     "Barbershop": "Barbershop",
     "Konsep company profile barbershop dengan layanan dan harga, cabang dan lokasi Google Maps, galeri, katalog produk sederhana, dan reservasi melalui WhatsApp.": "A barbershop company profile concept with services and prices, branches and Google Maps locations, a gallery, a simple product catalog, and reservations via WhatsApp.",
     "Travel Umrah & Haji": "Umrah & Hajj Travel",
-    "Konsep website perusahaan perjalanan ibadah dengan katalog paket, dokumentasi jamaah, informasi mitra, artikel, FAQ, dan permintaan konsultasi melalui WhatsApp.": "A website concept for a pilgrimage travel company with a package catalog, pilgrim documentation, partner information, articles, FAQ, and consultation requests via WhatsApp."
+    "Konsep website perusahaan perjalanan ibadah dengan katalog paket, dokumentasi jamaah, informasi mitra, artikel, FAQ, dan permintaan konsultasi melalui WhatsApp.": "A website concept for a pilgrimage travel company with a package catalog, pilgrim documentation, partner information, articles, FAQ, and consultation requests via WhatsApp.",
+    "Website profesional untuk bisnis": "Professional websites for businesses",
+    "yang ingin": "that want to",
+    "berkembang.": "grow.",
+    "SynergyDev membantu bisnis membangun kehadiran digital melalui website profesional, sistem berbasis web, dan solusi digital yang disesuaikan dengan kebutuhan.": "SynergyDev helps businesses build a digital presence through professional websites, web-based systems, and digital solutions tailored to their needs.",
+    "Konsultasikan Proyek": "Discuss your project",
+    "Lihat Portofolio": "View portfolio"
   };
   var TITLES = {"Portofolio | SynergyDev":"Portfolio | SynergyDev", "Layanan | SynergyDev": "Services | SynergyDev", "Harga | SynergyDev": "Pricing | SynergyDev", "Tentang Kami | SynergyDev": "About Us | SynergyDev", "FAQ | SynergyDev": "FAQ | SynergyDev", "Kontak | SynergyDev": "Contact | SynergyDev", "Proses Kerja | SynergyDev": "How We Work | SynergyDev"};
   var ID_TO_EN = EN;
-  var EN_TO_ID = {};
-  Object.keys(EN).forEach(function (k) { EN_TO_ID[EN[k]] = k; });
+  var TITLE_EN = TITLES, TITLE_ID = {};
+  Object.keys(TITLES).forEach(function (k) { TITLE_ID[TITLES[k]] = k; });
 
   function walk(root, map) {
     var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-    var n; var nodes = [];
+    var n, nodes = [];
     while ((n = w.nextNode())) {
       var p = n.parentNode;
       if (!p || /^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)) continue;
@@ -257,43 +263,32 @@
     });
   }
 
-  function apply(lang) {
-    var map = lang === 'en' ? ID_TO_EN : EN_TO_ID;
-    if (lang === 'en' && !document.documentElement.hasAttribute('data-id-ready')) {
-      document.documentElement.setAttribute('data-id-ready', '1');
-    }
-    walk(document.body, map);
-    if (lang === 'en' && TITLES[document.title]) document.title = TITLES[document.title];
-    if (lang === 'id') { var rev = {}; Object.keys(TITLES).forEach(function (k) { rev[TITLES[k]] = k; }); if (rev[document.title]) document.title = rev[document.title]; }
-    document.documentElement.lang = lang === 'en' ? 'en' : 'id';
-    document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
-      var on = b.getAttribute('data-lang-btn') === lang;
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
+  /* Halaman /en/ diterjemahkan saat dimuat. Halaman ID tetap apa adanya. */
+  function translateToEn() {
+    walk(document.body, ID_TO_EN);
+    if (TITLE_EN[document.title]) document.title = TITLE_EN[document.title];
+    document.documentElement.lang = 'en';
   }
 
-  function current() { try { return localStorage.getItem(KEY) || 'id'; } catch (e) { return 'id'; } }
-  function save(l) { try { localStorage.setItem(KEY, l); } catch (e) {} }
-
-  function build() {
+  /* Switcher ID | EN berpindah antar URL, sehingga setiap bahasa punya alamat sendiri. */
+  function buildSwitch(isEn) {
     var row = document.querySelector('.top .nav-cta');
     if (!row || row.querySelector('.lang')) return;
+    var path = location.pathname;
+    var idPath = path.replace(/^\/en(?=\/|$)/, '') || '/';
+    var enPath = isEn ? path : (path === '/' ? '/en/' : '/en' + path);
     var box = document.createElement('div');
     box.className = 'lang';
     box.setAttribute('role', 'group');
     box.setAttribute('aria-label', 'Pilih bahasa / Choose language');
-    box.innerHTML = '<button type="button" data-lang-btn="id" aria-pressed="true">ID</button><span aria-hidden="true">|</span><button type="button" data-lang-btn="en" aria-pressed="false">EN</button>';
+    box.innerHTML = '<a href="' + idPath + '" hreflang="id"' + (isEn ? '' : ' aria-current="true"') + '>ID</a><span aria-hidden="true">|</span><a href="' + enPath + '" hreflang="en"' + (isEn ? ' aria-current="true"' : '') + '>EN</a>';
     row.insertBefore(box, row.firstChild);
-    box.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-lang-btn]'); if (!b) return;
-      var l = b.getAttribute('data-lang-btn'); save(l); window.location.reload();
-    });
   }
 
   function init() {
-    build();
-    var l = current();
-    if (l === 'en') apply('en'); else apply('id');
+    var isEn = document.documentElement.getAttribute('data-force-lang') === 'en';
+    buildSwitch(isEn);
+    if (isEn) translateToEn();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
