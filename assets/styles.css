@@ -691,3 +691,15 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 .foot-social li a:hover{color:var(--accent)}
 .foot-social svg{width:20px;height:20px;flex:none}
 body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !important}
+
+/* v32 — menu HP bisa digulir sampai item terakhir (Proses Kerja, Blog, FAQ, Kontak) */
+@media (max-width:960px){
+  .top nav.open{
+    max-height:calc(100vh - 190px);
+    max-height:calc(100dvh - 190px);
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+    padding-bottom:calc(24px + env(safe-area-inset-bottom, 0px))
+  }
+}
