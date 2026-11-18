@@ -327,7 +327,15 @@
     "Data untuk tampilan di media sosial (Open Graph)": "Data for social media previews (Open Graph)",
     "Kami tidak menjamin peringkat tertentu di Google, karena hasilnya bergantung pada banyak faktor.": "We do not guarantee a specific Google ranking, because results depend on many factors.",
     "Integrasi WhatsApp &amp; Maps": "WhatsApp &amp; Maps integration",
-    "Integrasi WhatsApp & Maps": "WhatsApp & Maps integration"
+    "Integrasi WhatsApp & Maps": "WhatsApp & Maps integration",
+    "Profil studio": "Studio profile",
+    "Profil SynergyDev": "SynergyDev profile",
+    "Nama studio": "Studio name",
+    "Bidang usaha": "Business field",
+    "Jasa pembuatan website dan solusi digital": "Website development and digital solutions",
+    "Aktif sejak": "Active since",
+    "Tim": "Team",
+    "Tim kecil yang bekerja langsung dengan klien": "A small team that works directly with clients"
   };
   var TITLES = {"Portofolio | SynergyDev":"Portfolio | SynergyDev", "Layanan | SynergyDev": "Services | SynergyDev", "Harga | SynergyDev": "Pricing | SynergyDev", "Tentang Kami | SynergyDev": "About Us | SynergyDev", "FAQ | SynergyDev": "FAQ | SynergyDev", "Kontak | SynergyDev": "Contact | SynergyDev", "Proses Kerja | SynergyDev": "How We Work | SynergyDev"};
   var ID_TO_EN = EN;

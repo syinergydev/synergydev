@@ -663,3 +663,9 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
   .dd-menu a:hover{background:none}
   .svc-grid{grid-template-columns:1fr}
 }
+
+/* v26 — tabel profil studio */
+.prof{width:100%;border-collapse:collapse;margin-top:8px}
+.prof th,.prof td{text-align:left;padding:16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.prof th{width:38%;font-weight:600;color:var(--ink-2);padding-right:24px}
+@media (max-width:640px){.prof th,.prof td{display:block;width:100%;padding:8px 0}.prof th{border-bottom:0;padding-bottom:0}.prof td{padding-top:4px}}
