@@ -623,7 +623,7 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 /* v19 — pinned storytelling (desktop) & galeri geser proyek (HP) */
 @media (min-width:961px){
   .pin-story .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
-  .pin-story .wrap > .head{position:sticky;top:120px;margin-bottom:0}
+  .pin-story .wrap > .head{margin-bottom:0}
 }
 @media (max-width:960px){
   .pf-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding:4px 20px 16px;margin:0 -20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
