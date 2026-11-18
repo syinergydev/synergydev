@@ -609,3 +609,13 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 .lang a[aria-current="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
 .lang a:hover{color:var(--accent)}
 .lang a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* v18 — hero asimetris: teks kiri, foto kanan yang turun sedikit */
+@media (min-width:961px){
+  .hero{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);column-gap:clamp(40px,5vw,88px);align-items:end}
+  .hero .wrap{width:auto;margin:0 0 0 max(32px,calc((100vw - 1280px)/2 + 32px));padding:0;grid-column:1}
+  .hero-media{grid-column:2;width:auto;margin:clamp(96px,11vw,160px) max(32px,calc((100vw - 1280px)/2 + 0px)) 0 0;height:clamp(420px,58vh,640px);border-radius:var(--r-lg)}
+  .hero-media img{height:112%;margin-top:-6%}
+  .hero-foot{grid-template-columns:1fr}
+  .hero-cta{margin-top:0}
+}
