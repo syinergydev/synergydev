@@ -631,3 +631,14 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
   .pf-strip .pf-item{flex:0 0 min(82%,420px);scroll-snap-align:start}
   .pf-strip .pf-item[hidden]{display:none}
 }
+
+/* v21 — halaman Konsep: bingkai yang bisa digulir */
+.kon-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,5vw,72px) clamp(20px,3vw,40px)}
+.kon-item{min-width:0}
+.kon-item .meta{margin:10px 0 6px}
+.kon-item h3{font-size:clamp(1.4rem,2.2vw,1.8rem);margin:0 0 10px}
+.kon-item p{max-width:58ch}
+.kon-frame{margin:22px 0;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#fff;height:clamp(420px,46vw,560px)}
+.kon-frame iframe{width:100%;height:100%;border:0;display:block}
+.kon-actions{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:960px){.kon-grid{grid-template-columns:1fr}.kon-frame{height:440px}}
