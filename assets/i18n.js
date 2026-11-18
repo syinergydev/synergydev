@@ -92,7 +92,7 @@
     row.insertBefore(box, row.firstChild);
     box.addEventListener('click', function (e) {
       var b = e.target.closest('[data-lang-btn]'); if (!b) return;
-      var l = b.getAttribute('data-lang-btn'); save(l); apply(l);
+      var l = b.getAttribute('data-lang-btn'); save(l); window.location.reload();
     });
   }
 
