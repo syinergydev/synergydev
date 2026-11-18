@@ -680,3 +680,7 @@ html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margi
 .blog-card h3{font-size:clamp(1.3rem,2vw,1.6rem);margin:0 0 10px}
 .blog-card h3 a{color:inherit;text-decoration:none}
 .blog-card h3 a:hover{color:var(--accent)}
+
+/* v30 — kartu blog: lebar kolom yang benar */
+.pf-grid > .blog-card{grid-column:span 12;min-width:0}
+@media (min-width:961px){.pf-grid > .blog-card{grid-column:span 4}}
