@@ -561,3 +561,13 @@ html.js-motion .sw{opacity:.22}
 
 /* Parallax: gambar sedikit lebih tinggi dari bingkai, hanya saat gerak aktif */
 html.js-motion .side-media img,html.js-motion .page-figure img{height:118%;margin-top:-9%}
+
+/* v11 — navigasi mengambang (detached) */
+.top{background:transparent;border:0;position:sticky;top:12px;margin-top:12px;pointer-events:none}
+.top-row{pointer-events:auto;width:min(1180px,calc(100% - 32px));height:68px;padding:0 12px 0 24px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:0 14px 32px -22px rgba(10,37,64,.45)}
+.top.is-scrolled{box-shadow:none}
+.top .logo img{height:36px;width:auto}
+.top nav{gap:26px}
+@media (max-width:960px){.top nav{position:absolute;top:80px;left:16px;right:16px;border-radius:24px;border:1px solid var(--line);background:#fff;padding:8px 24px 18px;box-shadow:0 24px 48px -28px rgba(10,37,64,.45)}}
+@media (max-width:960px){.top nav a:last-child{border-bottom:0}}
+.foot-social ul{display:flex;flex-direction:column;gap:6px}
