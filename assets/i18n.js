@@ -335,7 +335,11 @@
     "Jasa pembuatan website dan solusi digital": "Website development and digital solutions",
     "Aktif sejak": "Active since",
     "Tim": "Team",
-    "Tim kecil yang bekerja langsung dengan klien": "A small team that works directly with clients"
+    "Tim kecil yang bekerja langsung dengan klien": "A small team that works directly with clients",
+    "Toko Online": "Online store",
+    "Portal Berita": "News portal",
+    "Maintenance &amp; Backup": "Maintenance &amp; backup",
+    "Tambah Fitur": "Add features"
   };
   var TITLES = {"Portofolio | SynergyDev":"Portfolio | SynergyDev", "Layanan | SynergyDev": "Services | SynergyDev", "Harga | SynergyDev": "Pricing | SynergyDev", "Tentang Kami | SynergyDev": "About Us | SynergyDev", "FAQ | SynergyDev": "FAQ | SynergyDev", "Kontak | SynergyDev": "Contact | SynergyDev", "Proses Kerja | SynergyDev": "How We Work | SynergyDev"};
   var ID_TO_EN = EN;
