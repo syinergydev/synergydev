@@ -339,7 +339,8 @@
     "Toko Online": "Online store",
     "Portal Berita": "News portal",
     "Maintenance &amp; Backup": "Maintenance &amp; backup",
-    "Tambah Fitur": "Add features"
+    "Tambah Fitur": "Add features",
+    "Lihat semua konsep": "View all concepts",
   };
   var TITLES = {"Portofolio | SynergyDev":"Portfolio | SynergyDev", "Layanan | SynergyDev": "Services | SynergyDev", "Harga | SynergyDev": "Pricing | SynergyDev", "Tentang Kami | SynergyDev": "About Us | SynergyDev", "FAQ | SynergyDev": "FAQ | SynergyDev", "Kontak | SynergyDev": "Contact | SynergyDev", "Proses Kerja | SynergyDev": "How We Work | SynergyDev"};
   var ID_TO_EN = EN;
