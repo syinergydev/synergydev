@@ -708,3 +708,8 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
 .kon-scroll{height:100%;overflow-y:auto;background:#fff;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .kon-scroll img{display:block;width:100%;height:auto}
 .kon-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* v34 — semua konsep + filter */
+.kon-item[hidden]{display:none}
+.kon-scroll img{display:block;width:100%;height:auto;margin:0}
+.kon-scroll{background:#fff}
