@@ -720,3 +720,19 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
 .kon-tools input[type=search]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .kon-count{font-size:.92rem;color:var(--mute);margin:0 0 24px}
 .pf-concepts .pf-explain{margin-bottom:0}
+
+/* v40 — sentuhan akhir halaman Konsep: kartu lebih modern, bingkai ala jendela browser */
+.kon-grid{gap:clamp(28px,4vw,56px) clamp(18px,2.6vw,36px)}
+.kon-item{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(20px,2.2vw,28px);box-shadow:0 1px 0 rgba(10,37,64,.04),0 22px 48px -34px rgba(10,37,64,.4);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s cubic-bezier(.2,.7,.2,1)}
+.kon-item:hover{transform:translateY(-4px);box-shadow:0 1px 0 rgba(10,37,64,.04),0 34px 60px -34px rgba(10,37,64,.5)}
+.kon-item .pf-tag{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(47,111,224,.08);color:var(--accent);font-size:.7rem;letter-spacing:.08em;margin-bottom:14px}
+.kon-item .meta{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+.kon-frame{display:flex;flex-direction:column;margin:20px 0 22px;border-radius:18px;border:1px solid var(--line);background:#f4f7fb;box-shadow:0 18px 40px -30px rgba(10,37,64,.5);overflow:hidden;height:clamp(440px,48vw,580px)}
+.kon-frame::before{content:"";display:block;flex:none;height:30px;background:linear-gradient(#fbfcfe,#eef2f7);border-bottom:1px solid var(--line);background-image:radial-gradient(circle at 14px 15px,#ff5f57 4px,transparent 4.5px),radial-gradient(circle at 30px 15px,#febc2e 4px,transparent 4.5px),radial-gradient(circle at 46px 15px,#28c840 4px,transparent 4.5px),linear-gradient(#fbfcfe,#eef2f7)}
+.kon-frame iframe{flex:1;width:100%;border:0;background:#fff}
+.kon-scroll{flex:1;min-height:0}
+.kon-actions{gap:10px}
+.kon-actions .btn{border-radius:999px;padding:12px 20px;font-size:.92rem}
+.kon-tools input[type=search]{border:1.5px solid var(--line);box-shadow:0 10px 24px -20px rgba(10,37,64,.4);transition:border-color .2s ease,box-shadow .2s ease}
+.kon-tools input[type=search]:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(47,111,224,.12);outline:none}
+.pf-filter button{box-shadow:0 6px 16px -14px rgba(10,37,64,.5)}
