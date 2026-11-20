@@ -703,3 +703,8 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
     padding-bottom:calc(24px + env(safe-area-inset-bottom, 0px))
   }
 }
+
+/* v33 — bingkai konsep berisi screenshot seluruh halaman, bisa digulir */
+.kon-scroll{height:100%;overflow-y:auto;background:#fff;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.kon-scroll img{display:block;width:100%;height:auto}
+.kon-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
