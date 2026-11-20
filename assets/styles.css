@@ -713,3 +713,10 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
 .kon-item[hidden]{display:none}
 .kon-scroll img{display:block;width:100%;height:auto;margin:0}
 .kon-scroll{background:#fff}
+
+/* v36 — pencarian konsep & bagian konsep ringkas di Portofolio */
+.kon-tools{margin:0 0 8px}
+.kon-tools input[type=search]{width:100%;max-width:440px;padding:14px 20px;border:1px solid var(--line);border-radius:999px;font:inherit;background:#fff;color:var(--ink);margin-bottom:18px}
+.kon-tools input[type=search]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kon-count{font-size:.92rem;color:var(--mute);margin:0 0 24px}
+.pf-concepts .pf-explain{margin-bottom:0}
