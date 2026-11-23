@@ -736,3 +736,16 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
 .kon-tools input[type=search]{border:1.5px solid var(--line);box-shadow:0 10px 24px -20px rgba(10,37,64,.4);transition:border-color .2s ease,box-shadow .2s ease}
 .kon-tools input[type=search]:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(47,111,224,.12);outline:none}
 .pf-filter button{box-shadow:0 6px 16px -14px rgba(10,37,64,.5)}
+
+
+/* v42 — visual hero SynergyDev: device mockup premium */
+.hero-media img{object-position:right center}
+@media (max-width:960px){
+  .hero-media{aspect-ratio:16/9;background:#06152c}
+  .hero-media img{width:100%;height:100%;margin:0;object-fit:contain;object-position:center}
+}
+
+/* Portfolio showcase stills: preserve the complete device mockup artwork. */
+.pf-media.pf-showcase{aspect-ratio:16/10;background:linear-gradient(145deg,#0b1d33 0%,#153b65 58%,#2f6fe0 100%);padding:0}
+.pf-media.pf-showcase img{width:100%;height:100%;object-fit:cover;display:block}
+.pf-media.pf-showcase .vid-chip{box-shadow:0 8px 24px rgba(0,0,0,.2)}

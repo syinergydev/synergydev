@@ -44,6 +44,7 @@
     'SynergyDev aktif sejak 2025. Kami bekerja dengan tim kecil, memahami kebutuhan dulu, lalu membangun website yang rapi dan siap dikembangkan.':
       'SynergyDev has been active since 2025. We work with a small team, understand your needs first, then build a clean website that is ready to grow.',
     'Mulai aktif': 'Active since', 'Website dipublikasikan': 'Websites published', 'DP awal pengerjaan': 'Initial deposit',
+    'Fokus solusi': 'Focus areas', 'Website & aplikasi': 'Websites & applications', 'Sesuai kesepakatan': 'As agreed',
     "Lewati ke konten utama": "Skip to main content",
     "Solusi website untuk berbagai kebutuhan bisnis, dari company profile hingga multi-outlet.": "Website solutions for many business needs, from company profiles to multi-outlet sites.",
     "Multi-outlet": "Multi-outlet",
