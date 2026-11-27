@@ -387,7 +387,7 @@
   function init() {
     var isEn = document.documentElement.getAttribute('data-force-lang') === 'en';
     buildSwitch(isEn);
-    if (isEn) translateToEn();
+    if (isEn && !document.documentElement.hasAttribute('data-static-en')) translateToEn();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

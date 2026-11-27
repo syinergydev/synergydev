@@ -27,7 +27,7 @@
       if (!nav.contains(e.target) && !toggle.contains(e.target)) closeMenu();
     });
     window.addEventListener('resize', function () {
-      if (window.matchMedia('(min-width: 961px)').matches) closeMenu();
+      if (window.matchMedia('(min-width: 1101px)').matches) closeMenu();
     });
   }
 

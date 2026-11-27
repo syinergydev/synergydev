@@ -126,45 +126,26 @@
     root.classList.remove('curtain-on', 'intro');
     root.style.overflow = '';
     if (curtain) gsap.set(curtain, { clearProps: 'all' });
-    if (curtainLogo) gsap.set(curtainLogo, { clearProps: 'all' });
     ScrollTrigger.refresh();
   }
 
-  function runIntro() {
-    var cnt = curtain.querySelector('[data-count]');
-    var bar = curtain.querySelector('.curtain-bar');
-    var o = { v: 0 };
-    root.style.overflow = 'hidden';
-    if (store) { try { store.setItem('sd-seen', '1'); } catch (e) {} }
-    gsap.timeline({ onComplete: endCurtain })
-      .fromTo(curtainLogo, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'expo.out' }, 0)
-      .to(o, { v: 100, duration: 1, ease: 'power2.inOut', onUpdate: function () { cnt.textContent = Math.round(o.v); } }, 0)
-      .fromTo(bar, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power2.inOut' }, 0)
-      .to(curtainLogo, { y: -18, opacity: 0, duration: 0.4, ease: 'power2.in' }, 1.05)
-      .to(curtain, { yPercent: -100, duration: 0.95, ease: 'expo.inOut' }, 1.2)
-      .call(heroIn, null, 1.6);
-  }
-
+  /* Tirai singkat (maks. 150ms) hanya untuk transisi antarhalaman; tanpa loader. */
   function runArrival() {
     if (store) { try { store.removeItem('sd-nav'); } catch (e) {} }
     gsap.set(curtain, { yPercent: 0 });
-    gsap.timeline({ delay: 0.08, onComplete: endCurtain })
-      .to(curtainLogo, { y: -14, opacity: 0, duration: 0.35, ease: 'power2.in' }, 0)
-      .to(curtain, { yPercent: -100, duration: 0.85, ease: 'expo.inOut' }, 0.2)
-      .call(heroIn, null, 0.55);
+    gsap.timeline({ onComplete: endCurtain })
+      .to(curtain, { opacity: 0, duration: 0.15, ease: 'power1.out' }, 0)
+      .call(heroIn, null, 0.05);
   }
 
   function leave(href) {
     var gone = false;
     function go() { if (gone) return; gone = true; window.location.href = href; }
     if (store) { try { store.setItem('sd-nav', '1'); } catch (e) {} }
-    gsap.set(curtain, { yPercent: 100 });
-    gsap.set(curtainLogo, { opacity: 0, y: 20 });
+    gsap.set(curtain, { yPercent: 0, opacity: 0 });
     root.classList.add('curtain-on');
-    gsap.timeline({ onComplete: go })
-      .to(curtain, { yPercent: 0, duration: 0.65, ease: 'expo.inOut' }, 0)
-      .to(curtainLogo, { opacity: 1, y: 0, duration: 0.4, ease: 'expo.out' }, 0.25);
-    window.setTimeout(go, 1600);
+    gsap.to(curtain, { opacity: 1, duration: 0.12, ease: 'power1.in', onComplete: go });
+    window.setTimeout(go, 400);
   }
 
   document.addEventListener('click', function (e) {
@@ -338,11 +319,9 @@
   }
 
   /* ---------- Mulai ---------- */
-  var isIntro = root.classList.contains('intro');
-  var onNav = root.classList.contains('curtain-on') && !isIntro;
+  var onNav = root.classList.contains('curtain-on');
   if (failed) return;
-  if (isIntro && curtain) runIntro();
-  else if (onNav && curtain) runArrival();
+  if (onNav && curtain) runArrival();
   else heroIn();
 
   window.addEventListener('load', function () {
