@@ -220,7 +220,7 @@ textarea{min-height:140px;resize:vertical}
 .foot-logo{height:40px;width:auto;margin-bottom:16px}
 .foot-tag{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin:0 0 6px}
 .foot-note{font-size:.95rem;margin:0}
-.foot h4{font-size:.95rem;color:var(--ink);margin:0 0 14px;font-weight:600}
+.foot h3{font-size:.95rem;color:var(--ink);margin:0 0 14px;font-weight:600}
 .foot ul{list-style:none;padding:0;margin:0}
 .foot li{margin-bottom:9px;font-size:.95rem}
 .foot a{text-decoration:none;color:var(--ink-2)}
@@ -500,7 +500,7 @@ input,select,textarea{transition:border-color .2s ease-out,box-shadow .2s ease-o
 .foot-logo{height:48px;width:auto;filter:brightness(0) invert(1);margin-bottom:20px}
 .foot-tag{color:#fff;font-size:1.25rem}
 .foot-note{color:rgba(255,255,255,.64)}
-.foot h4{color:#fff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.foot h3{color:#fff;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
 .foot a{color:rgba(255,255,255,.78);transition:color .2s ease-out}
 .foot a:hover{color:#fff}
 .foot li{color:rgba(255,255,255,.64)}
@@ -765,3 +765,8 @@ body:has(.top nav.open) .wa-float,body:has(.top nav.open) .fab{display:none !imp
 }
 .kon-more{display:block;margin:40px auto 0}
 .kon-more[hidden]{display:none}
+
+/* v13 — keterbacaan artikel dan halaman layanan (tanpa mengubah isi) */
+.post p,.post li{text-wrap:pretty;line-height:1.75}
+.post h2{scroll-margin-top:96px}
+.post .svc-list li{margin-bottom:6px}

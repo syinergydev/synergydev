@@ -1,0 +1,26 @@
+# Aset yang terindikasi tidak digunakan (TIDAK DIHAPUS)
+
+Metode: nama file tidak ditemukan di .html/.css/.js/.json/.xml/.md/.txt manapun. Ini dugaan; verifikasi sebelum menghapus
+(aset bisa dipakai lewat path yang disusun dinamis atau oleh halaman di luar repo).
+
+- assets/hero-2.jpg (142 KB)
+- assets/foto-mengapa.webp (59 KB)
+- assets/hero-1.jpg (150 KB)
+- assets/hero.jpg (59 KB)
+- assets/synergydev-workflow.webp (94 KB)
+- assets/synergydev-about.webp (96 KB)
+- assets/exterior.jpg (164 KB)
+- assets/building.jpg (172 KB)
+- assets/team.jpg (139 KB)
+- assets/synergydev-hero.webp (60 KB)
+- assets/projects/fun-english.jpg (110 KB)
+- assets/projects/rustic-market.jpg (202 KB)
+- assets/projects/ktrog-admin.jpg (88 KB)
+- assets/projects/ktrog-architecture.jpg (143 KB)
+- assets/projects/villa-jambu-klutuk.jpg (155 KB)
+- assets/projects/chasly.jpg (85 KB)
+- assets/projects/ktrog.jpg (141 KB)
+- assets/video/ktrog-app.mp4 (299 KB)
+- assets/video/rustic-market.mp4 (362 KB)
+- assets/video/rustic-market-poster.webp (138 KB)
+- assets/video/ktrog-app-poster.webp (47 KB)
